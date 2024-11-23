@@ -1,0 +1,130 @@
+/* General Layout */
+.home-container {
+    font-family: 'Roboto', sans-serif;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    color: #333;
+    background-color: #f7f7f7;
+}
+
+/* Introduction Section */
+.intro {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.intro h1 {
+    font-size: 2.5rem;
+    color: #2d2d2d;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+/* Platform Features Section */
+.features {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 2rem;
+    color: #2d2d2d;
+    margin-bottom: 30px;
+}
+
+.feature-items {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Space between the cards */
+    flex-wrap: nowrap; /* Prevent wrapping to the next line */
+    margin-bottom: 50px;
+}
+
+.feature-item {
+    width: 23%; /* Set width to 23% for four cards in one row */
+    padding: 20px;
+    background-color: #d4edda; /* Soft green background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-item h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    color: #777;
+    line-height: 1.5;
+}
+
+/* Call to Action Section */
+.cta {
+    text-align: center;
+    margin-top: 50px;
+    background-color: #3d9e6a;
+    color: white;
+    padding: 40px 20px;
+    border-radius: 8px;
+}
+
+.cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cta p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: #ff8000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e67e00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .feature-items {
+        flex-direction: column; /* Stack cards vertically on smaller screens */
+        align-items: center;
+    }
+
+    .feature-item {
+        width: 80%; /* Set card width to 80% on smaller screens */
+        margin: 20px 0;
+    }
+
+    .cta h2 {
+        font-size: 2rem;
+    }
+
+    .cta p {
+        font-size: 1rem;
+    }
+}

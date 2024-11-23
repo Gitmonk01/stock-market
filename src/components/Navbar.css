@@ -1,0 +1,61 @@
+.navbar {
+    background-color: #333;
+    padding: 10px;
+    color: white;
+}
+
+.navbar-list {
+    list-style: none;
+    display: flex;
+    align-items: center; /* Aligns items vertically in the center */
+    padding: 0;
+    margin: 0;
+    width: 100%; /* Ensures that the navbar takes up full width */
+}
+
+.navbar-list li {
+    margin-right: 20px; /* Adds space between the tabs */
+}
+
+.navbar-link {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* Applies consistent styling for the button to match links */
+.navbar-link,
+button.navbar-link {
+    background: none;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: inherit;
+    display: inline-block;
+    height: 100%; /* Ensures vertical alignment consistency */
+}
+
+.navbar-link:hover,
+button.navbar-link:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Adjustments to move the welcome message and logout button to the right */
+.navbar-list .welcome-message {
+    margin-left: auto; /* Aligns the "Welcome, Username" part to the right */
+    display: flex;
+    align-items: center; /* Ensure vertical alignment */
+    margin-right: 20px; /* Space between username and logout button */
+}
+
+.navbar-list .logout-button {
+    display: flex;
+    align-items: center; /* Ensure vertical alignment */
+}

@@ -1,0 +1,99 @@
+/* Container for the entire stock search form */
+.stock-search-container {
+    max-width: 500px;
+    margin: 35px auto; /* 35px margin from the top and auto margin left and right */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    margin-bottom: 218px; /* Added margin-bottom to create space below the card */
+}
+
+/* Heading styles */
+.stock-search-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Input field styles for stock symbol */
+.stock-search-container input[type="text"],
+.stock-search-container input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border 0.3s ease-in-out;
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+.stock-search-container input[type="text"]:focus,
+.stock-search-container input[type="number"]:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Button styles */
+.stock-search-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745; /* Green color */
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.stock-search-container button:hover {
+    background-color: #218838; /* Darker green shade on hover */
+}
+
+/* Styles for price and quantity input area */
+.stock-search-container p {
+    font-size: 18px;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Success message styles */
+.success {
+    margin-top: 20px;
+    color: green !important; /* Ensure success message is green */
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* Error message styles */
+.stock-search-container .error {
+    margin-top: 20px;
+    color: red !important;  /* Ensure error message is always red */
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* Media query for responsiveness on smaller screens */
+@media (max-width: 600px) {
+    .stock-search-container {
+        padding: 15px;
+        max-width: 90%;
+    }
+
+    .stock-search-container h2 {
+        font-size: 20px;
+    }
+
+    .stock-search-container input[type="text"],
+    .stock-search-container input[type="number"],
+    .stock-search-container button {
+        padding: 10px;
+        font-size: 14px;
+    }
+}

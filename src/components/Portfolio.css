@@ -1,0 +1,186 @@
+/* Loader Styling */
+.loader {
+    display: block;
+    position: relative;
+    height: 25px;
+    width: 400px; /* Increased width for the loader */
+    background: #fff;
+    overflow: hidden;
+    margin: 0 auto; /* Center the loader horizontally */
+}
+
+.loader:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: green;
+    animation: 6s prog ease-in infinite;
+}
+
+@keyframes prog {
+    to { width: 100%; }
+}
+
+/* Portfolio Summary Styling */
+.portfolio-summary {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    background-color: #f4f4f9;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-summary > div {
+    padding: 15px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    flex: 1;
+    margin: 0 10px; /* Ensures equal spacing between the cards */
+    width: 33%; /* Adjust width to give more space if needed */
+}
+
+.portfolio-summary > div:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* New Styling for Total Profit/Loss, Total Amount Invested, and Total Portfolio Value */
+.portfolio-summary .total-profit, 
+.portfolio-summary .total-invested, 
+.portfolio-summary .total-portfolio {
+    background-color: #f7f7f7;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #333; /* Default text color */
+    transition: all 0.3s ease;
+    margin: 0 10px; /* Same margin for all three cards */
+}
+
+.portfolio-summary .total-profit:hover, 
+.portfolio-summary .total-invested:hover, 
+.portfolio-summary .total-portfolio:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Add specific background colors for each */
+.portfolio-summary .total-profit {
+    background-color: #e6f7e6; /* Light green background */
+    border-color: #28a745; /* Green border */
+}
+
+.portfolio-summary .total-invested {
+    background-color: #eaf1f5; /* Light blue background */
+}
+
+.portfolio-summary .total-portfolio {
+    background-color: #fff3cd; /* Light yellow background */
+}
+
+/* Portfolio Grid Styling */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.portfolio-card {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.portfolio-card p {
+    margin: 8px 0;
+}
+
+.portfolio-card input {
+    width: 60%;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+/* Adjusted button styles */
+.portfolio-card button {
+    width: auto;
+    padding: 8px 15px; 
+    background-color: #28a745; 
+    color: white; 
+    border: none; 
+    margin-top: 20px; 
+    cursor: pointer; 
+}
+
+.portfolio-card button:hover {
+   background-color:#218838; 
+}
+
+/* New Styling for Portfolio Summary Sections */
+.portfolio-summary > div {
+   border :2 px solid #ddd ;
+   padding :20 px ;
+   background-color :#fafafa ;
+}
+
+.portfolio-summary h3 {
+   color :#333 ;
+   font-size :1.3 rem ;
+   margin-bottom :10 px ;
+   font-weight :600 ;
+}
+
+.portfolio-summary p {
+   font-size :1.2 rem ;
+   color :#444 ;
+   font-weight :600 ;
+}
+
+/* Green and Red Profit/Loss Color for Text */
+.green-text {
+   color :#28a745 ;
+   font-size :1.3 rem ;
+   font-weight :bold ;
+}
+
+.red-text {
+   color :#dc3545 ;
+   font-size :1.3 rem ;
+   font-weight :bold ;
+}
+
+/* Apply Green or Red Color to Total Profit/Loss Card Based on Value */
+.portfolio-summary .total-profit p,
+.portfolio-summary .total-profit.red-text,
+.portfolio-summary .total-invested p,
+.portfolio-summary .total-invested.red-text,
+.portfolio-summary .total-portfolio p,
+.portfolio-summary .total-portfolio.red-text {
+   color :inherit ; /* Inherit the text color from the class applied in React component */
+}
+
+/* Hover Effects for Portfolio Summary */
+.portfolio-summary > div:hover {
+   transform :scale(1.05) ;
+   box-shadow :0 px , rgba(255 ,255 ,255 ,255) , rgba(255 ,255 ,255 ,255) , rgba(255 ,255 ,255 ,255) , rgba(255 ,255 ,255 ,255) , rgba(255 ,255 ,255 ,255) , rgba(255 ,255 ,255 ,255) ; 
+}

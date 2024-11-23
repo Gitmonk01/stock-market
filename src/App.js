@@ -1,24 +1,68 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { auth } from './firebaseConfig'; // Import Firebase Auth
+import Login from './components/Login';
+import StockSearch from './components/StockSearch';
+import Portfolio from './components/Portfolio';
+import Transactions from './components/Transactions'; // Import Transactions page
+import Navbar from './components/Navbar';
+import Home from './components/Home'; // Import Home page
+import Footer from './components/Footer'; // Import Footer component
 
 function App() {
+  const [user, setUser] = useState(null); // Holds the current user
+  const [loading, setLoading] = useState(true); // Track loading state
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
+      setUser(currentUser); // Update user state when auth state changes
+      setLoading(false); // Once the user is set, stop loading
+    });
+
+    return () => unsubscribe(); // Clean up listener on unmount
+  }, []);
+
+  // While the auth state is being checked, show loading spinner
+  if (loading) {
+    return <div>Loading...</div>; // You can customize this loading screen
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar user={user} />
+      <Routes>
+        {/* Redirect logged-in users from login page */}
+        <Route
+          path="/login"
+          element={user ? <Navigate to="/stock-search" /> : <Login />}
+        />
+
+        {/* Stock Search, Portfolio, Transactions are only accessible to logged-in users */}
+        <Route
+          path="/stock-search"
+          element={user ? <StockSearch /> : <Navigate to="/login" />}
+        />
+
+        <Route
+          path="/portfolio"
+          element={user ? <Portfolio /> : <Navigate to="/login" />}
+        />
+
+        <Route
+          path="/transactions"
+          element={user ? <Transactions /> : <Navigate to="/login" />}
+        />
+
+        {/* Show Home page if the user is not logged in */}
+        <Route
+          path="/"
+          element={!user ? <Home /> : <Navigate to="/stock-search" />}
+        />
+      </Routes>
+
+      {/* Footer Component */}
+      <Footer />
+    </Router>
   );
 }
 

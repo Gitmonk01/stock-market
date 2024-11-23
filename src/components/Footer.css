@@ -1,0 +1,25 @@
+.footer {
+    background-color: #333; /* Same background as navbar */
+    padding: 10px; /* Same padding as navbar */
+    color: white; /* Same text color as navbar */
+    text-align: center; /* Center text in footer */
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto; /* Centers content within footer */
+  }
+  
+  .footer a {
+    color: white; /* White links */
+    text-decoration: none; /* No underline */
+    margin: 0 10px; /* Space between links */
+    font-size: 16px; /* Font size matching navbar links */
+  }
+  
+  .footer a:hover {
+    background-color: #555; /* Same hover effect as navbar */
+    border-radius: 5px; /* Consistent rounded corners */
+    padding: 5px; /* Add padding on hover for effect */
+  }
+  
