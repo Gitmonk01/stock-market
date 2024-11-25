@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import { auth } from './firebaseConfig'; // Import Firebase Auth
 import Login from './components/Login';
 import StockSearch from './components/StockSearch';
@@ -60,10 +60,20 @@ function App() {
         />
       </Routes>
 
-      {/* Footer Component */}
-      <Footer />
+      {/* Conditionally render Footer based on the current location */}
+      <FooterCondition />
     </Router>
   );
+}
+
+function FooterCondition() {
+  const location = useLocation();
+
+  // Show Footer only on Home and Login pages
+  if (location.pathname === '/' || location.pathname === '/login') {
+    return <Footer />;
+  }
+  return null;
 }
 
 export default App;

@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <p>&copy; {new Date().getFullYear()} Virtual Trading | Developed by Amit Kumar | All rights reserved</p>
+        <p>&copy; {new Date().getFullYear()} Virtual Trading Platform | Developed by Amit Kumar | All rights reserved</p>
       </div>
     </footer>
   );

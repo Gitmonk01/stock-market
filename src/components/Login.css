@@ -17,6 +17,7 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   width: 100%;
   max-width: 380px;
+  margin-left: 14px; /* Added margin to shift the card right */
 }
 
 .login-card h1 {
